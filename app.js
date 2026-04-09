@@ -11,10 +11,8 @@ async function loadData(keyword = "社工") {
     const debug = data.debug || {};
     cards.innerHTML = `
       <div class="card">
-        <div class="title">目前沒有資料（查看 debug）</div>
-        <pre style="white-space:pre-wrap;font-size:12px;color:#666;">
-${JSON.stringify(debug, null, 2)}
-        </pre>
+        <div class="title">目前沒有資料</div>
+        <pre style="white-space:pre-wrap;font-size:12px;color:#666;">${JSON.stringify(debug, null, 2)}</pre>
       </div>
     `;
     return;
@@ -31,7 +29,7 @@ ${JSON.stringify(debug, null, 2)}
       </div>
       <div class="title">${item.title}</div>
       <div class="link-row">
-        <a class="link-btn" href="${item.url}" target="_blank">查看原文</a>
+        <a class="link-btn" href="${item.url}" target="_blank" rel="noopener noreferrer">查看原文</a>
       </div>
     `;
 
