@@ -6,6 +6,8 @@
 
 建議使用 Netlify 連 GitHub 部署。
 
+若 Netlify 已連接此 repo，push 新 commit 後通常會自動重新部署。
+
 ## 功能
 
 - Google News RSS 真實資料
