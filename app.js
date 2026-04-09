@@ -11,7 +11,7 @@ async function loadData(keyword = "社工") {
     const debug = data.debug || {};
     cards.innerHTML = `
       <div class="card">
-        <div class="title">目前沒有資料</div>
+        <div class="title">目前沒有資料（查看 debug）</div>
         <pre style="white-space:pre-wrap;font-size:12px;color:#666;">
 ${JSON.stringify(debug, null, 2)}
         </pre>
