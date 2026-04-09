@@ -13,13 +13,18 @@ async function loadData(keyword = "社工") {
     const title = item.querySelector("title")?.textContent;
     const link = item.querySelector("link")?.textContent;
     const pubDate = item.querySelector("pubDate")?.textContent;
+    const source = item.querySelector("source")?.textContent || new URL(link).hostname;
 
     const div = document.createElement("div");
     div.className = "card";
     div.innerHTML = `
+      <div class="source">來源：${source}</div>
       <div class="title">${title}</div>
       <div class="summary">${pubDate}</div>
-      <a class="link-btn" href="${link}" target="_blank">查看原文</a>
+      <div class="link-row">
+        <a class="link-btn" href="${link}" target="_blank">查看原文</a>
+        <span class="origin-url">${new URL(link).hostname}</span>
+      </div>
     `;
     cards.appendChild(div);
   });

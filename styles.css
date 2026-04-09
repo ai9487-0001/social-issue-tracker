@@ -16,4 +16,7 @@ button { padding:8px 12px; border:none; border-radius:8px; background:#111; colo
 .title { font-size:18px; font-weight:bold; }
 .summary { color:#555; margin:8px 0; }
 .link-btn { display:inline-block; background:#111; color:white; padding:6px 10px; border-radius:6px; text-decoration:none; }
+.source { font-size:12px; color:#888; margin-bottom:6px; }
+.link-row { display:flex; justify-content:space-between; margin-top:10px; }
+.origin-url { font-size:12px; color:#aaa; }
 .hidden { display:none; }
