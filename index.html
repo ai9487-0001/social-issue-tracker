@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>社會議題追蹤站 v1.1</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>社會議題追蹤站 <span class="version">v1.1</span></h1>
+    </header>
+
+    <div class="search-wrap">
+      <input id="keywordInput" placeholder="輸入關鍵字（社工 / 家暴 / 兒少）" />
+      <select id="sourceSelect">
+        <option value="all">全部</option>
+        <option value="news">新聞</option>
+        <option value="threads">Threads</option>
+      </select>
+      <button id="searchBtn">搜尋</button>
+    </div>
+
+    <div id="cards"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
