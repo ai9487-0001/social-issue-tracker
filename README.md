@@ -57,6 +57,7 @@ THREADS_ACCESS_TOKEN=your_token
 >   publish = "."
 > ```
 
+
 ### 2) Vercel（替代方案）
 
 可把 `netlify/functions/feed.js` 改成 Vercel Serverless Function（例如放到 `api/feed.js`），前端 `fetch` 路徑改為 `/api/feed`。環境變數同名設定於 Vercel Project Settings。
@@ -68,6 +69,30 @@ THREADS_ACCESS_TOKEN=your_token
 ### 4) 自架 Node 服務（替代方案）
 
 以 Express/fastify 包一層 API（`/api/feed`），靜態檔案與 API 同機部署到 VPS / Render / Fly.io。適合需要自訂快取、排程與監控時使用。
+
+### 5) GitHub Actions 自動部署（可選）
+
+可以，**可直接自動部署**：只要你已設定好 secrets，`main` 每次 push 都會自動上線到 Netlify Production。
+
+- 檔案：`.github/workflows/netlify-deploy.yml`
+- 觸發：
+  - push 到 `main`（自動部署）
+  - 手動執行（workflow_dispatch）
+- 失敗保護：若缺少必要 secrets，workflow 會直接失敗並提示缺少項目。
+
+請在 GitHub Repository Settings → Secrets and variables → Actions 新增：
+
+- `NETLIFY_AUTH_TOKEN`
+- `NETLIFY_SITE_ID`
+
+設定完成後，push 到 `main` 即會直接執行：
+
+```bash
+git push origin main
+```
+
+可在 GitHub 的 Actions 頁面查看每次部署結果。
+
 
 ## 驗證上線
 
