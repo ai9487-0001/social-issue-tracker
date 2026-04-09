@@ -7,6 +7,19 @@ async function loadData(keyword = "社工") {
   const cards = document.getElementById("cards");
   cards.innerHTML = "";
 
+  if (!data.items.length) {
+    const debug = data.debug || {};
+    cards.innerHTML = `
+      <div class="card">
+        <div class="title">目前沒有資料</div>
+        <pre style="white-space:pre-wrap;font-size:12px;color:#666;">
+${JSON.stringify(debug, null, 2)}
+        </pre>
+      </div>
+    `;
+    return;
+  }
+
   data.items.forEach(item => {
     const div = document.createElement("div");
     div.className = "card";
